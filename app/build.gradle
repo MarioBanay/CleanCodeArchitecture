@@ -28,9 +28,21 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
 
     // network
-    implementation 'com.squareup.retrofit2:retrofit:2.0.0'
+    //implementation 'com.squareup.retrofit2:retrofit:2.0.0'
 
     // tests
-    testImplementation 'junit:junit:4.12'
     testImplementation 'org.mockito:mockito-core:+'
+    testImplementation 'junit:junit:4.12'
+    //androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    //androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test:core:1.1.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test:rules:1.1.1'
+
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    //testImplementation 'org.junit.jupiter:junit-jupiter-api'
 }

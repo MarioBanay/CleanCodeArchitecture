@@ -7,13 +7,14 @@ import com.kodelabs.boilerplate.domain.interactors.impl.WelcomingInteractorImpl;
 import com.kodelabs.boilerplate.domain.repository.MessageRepository;
 import com.kodelabs.boilerplate.threading.TestMainThread;
 
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-import static org.mockito.Matchers.anyString;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 
@@ -23,7 +24,8 @@ import static org.mockito.Mockito.when;
 public class GetWelcomeMessageTest {
 
     private       MainThread                   mMainThread;
-    @Mock private Executor                     mExecutor;
+    @Mock
+    private Executor                     mExecutor;
     @Mock private MessageRepository            mMessageRepository;
     @Mock private WelcomingInteractor.Callback mMockedCallback;
 
@@ -39,7 +41,7 @@ public class GetWelcomeMessageTest {
         WelcomingInteractorImpl interactor = new WelcomingInteractorImpl(mExecutor, mMainThread, mMockedCallback, mMessageRepository);
         interactor.run();
 
-        Mockito.when(mMessageRepository.getWelcomeMessage())
+        when(mMessageRepository.getWelcomeMessage())
                 .thenReturn(null);
 
         Mockito.verify(mMessageRepository).getWelcomeMessage();
